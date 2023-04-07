@@ -3,7 +3,9 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { CardActionArea } from "@mui/material";
+import { Avatar, CardActionArea, Stack } from "@mui/material";
+import { deepOrange } from "@mui/material/colors";
+import CustomAvatar from "./CustomAvatar";
 
 interface PostCardType {
   cardTitle: string;
@@ -23,9 +25,6 @@ export default function PostCard(props: PostCardType) {
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {cardTitle}
-          </Typography>
-          <Typography gutterBottom variant="body2" color={"grey"}>
-            {author}
           </Typography>
           <Typography variant="body1" color="text.secondary">
             {cardContent.substring(0, 200)}
