@@ -1,3 +1,4 @@
+import ResponsiveAppBar from "@component/components/Appbar";
 import PostCard, { PostCardButton } from "@component/components/PostCard";
 import { GetPostListResponse } from "@component/services/ApiTypes";
 import { getBlogList } from "@component/services/BlogPost";
