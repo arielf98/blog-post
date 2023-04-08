@@ -5,16 +5,15 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Avatar, CardActionArea, Stack } from "@mui/material";
 import { deepOrange } from "@mui/material/colors";
-import CustomAvatar from "./CustomAvatar";
+import { LinkProps } from "next/link";
 
 interface PostCardType {
   cardTitle: string;
   cardContent: string;
-  author: string;
 }
 
 export default function PostCard(props: PostCardType) {
-  const { cardContent, cardTitle, author } = props;
+  const { cardContent, cardTitle } = props;
   return (
     <Card
       sx={{
@@ -34,3 +33,20 @@ export default function PostCard(props: PostCardType) {
     </Card>
   );
 }
+
+// eslint-disable-next-line react/display-name
+export const PostCardButton = React.forwardRef<
+  HTMLAnchorElement,
+  {
+    onClick?: React.MouseEventHandler<HTMLAnchorElement> | undefined;
+    href?: string | undefined;
+    cardContent: string;
+    cardTitle: string;
+  }
+>(({ onClick, href, cardContent, cardTitle }, ref) => {
+  return (
+    <a href={href} onClick={onClick} ref={ref} style={{textDecoration: 'none'}}>
+      <PostCard cardContent={cardContent} cardTitle={cardTitle} />
+    </a>
+  );
+});

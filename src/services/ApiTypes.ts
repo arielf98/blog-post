@@ -12,3 +12,11 @@ export interface GetUserListResponse {
   gender: string;
   status: string;
 }
+
+export interface BlogPostComments {
+  id: number;
+  post_id: number;
+  name: string;
+  email: string;
+  body: string;
+}

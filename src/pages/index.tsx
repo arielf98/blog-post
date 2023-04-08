@@ -1,48 +1,55 @@
-import PostCard from "@component/components/PostCard";
-import { incrementPage } from "@component/redux/blog-post/BlogPost";
-import { RootState, store } from "@component/redux/store";
+import PostCard, { PostCardButton } from "@component/components/PostCard";
 import { GetPostListResponse } from "@component/services/ApiTypes";
 import { getBlogList } from "@component/services/BlogPost";
 import { CircularProgress, Pagination, Stack } from "@mui/material";
 import { useQuery } from "@tanstack/react-query";
 import { InferGetServerSidePropsType } from "next";
-import { useRouter } from "next/router";
+import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 
 export default function Home() {
   const [page, setPage] = useState(1);
-  const dispatch = useDispatch();
-  const router = useRouter();
 
-  const TOTAL_PAGE = 1252;
+  /**
+   * TOTAL_ROWS is total from go-rest
+   * i do manual calculation because response from posts not provide total rows
+   * 1000 to safe because total number not fixed
+   */
+  const TOTAL_ROWS = 1000;
   const PER_PAGE = 15;
-  const PAGE = Math.ceil(TOTAL_PAGE / PER_PAGE);
+  const PAGE = Math.ceil(TOTAL_ROWS / PER_PAGE);
+
+  const { data: blogpostData, isLoading } = useQuery({
+    queryKey: ["blog-post", page],
+    queryFn: async () => await getBlogList({ page, per_page: PER_PAGE }),
+  });
 
   const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
     setPage(value);
   };
 
-  const { data, isLoading } = useQuery({
-    queryKey: ["blog-post", page],
-    queryFn: async () => await getBlogList({ page, per_page: PER_PAGE }),
-  });
-
   return (
     <>
       {isLoading ? (
-        <CircularProgress color="info" />
+        <CircularProgress />
       ) : (
         <>
+          <title>My Blog Post</title>
           <Stack gap={5} flexWrap={"wrap"} direction={"row"} p={10}>
-            {data?.map((item, index) => {
+            {blogpostData?.map((item, index) => {
               return (
-                <PostCard
-                  key={`${index}-${item.user_id}`}
-                  cardContent={item.body}
-                  cardTitle={item.title}
-                  author={item.user_id.toString()}
-                />
+                <div key={`${item.user_id}-${index}`}>
+                  <Link
+                    href={`/posts/details/${item.id}/${item.user_id}`}
+                    passHref
+                    legacyBehavior
+                  >
+                    <PostCardButton
+                      cardContent={item.body}
+                      cardTitle={item.title}
+                    />
+                  </Link>
+                </div>
               );
             })}
           </Stack>
@@ -51,7 +58,7 @@ export default function Home() {
               count={PAGE}
               size="large"
               sx={{ mr: 5 }}
-              defaultPage={page}
+              page={page}
               onChange={handleChange}
             />
           </Stack>
