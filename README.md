@@ -16,6 +16,8 @@ cara install :
 
 setelah pnpm terinstall run :
 
+untuk menjalan dev pada lokal
+
 ```bash
 pnpm run dev
 ```
@@ -29,8 +31,6 @@ didalam file `env.local` isi variable :
 NEXT_PUBLIC_TOKEN = secret token anda
 ```
 isi secret token adalah secret token dari go-rest [go rest](https://gorest.co.in/)
-
-untuk menjalan dev pada lokal
 
 untuk hasil yang lebih maksimal next js bisa dibuild dengan menggunakan perintah :
 
