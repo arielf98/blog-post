@@ -22,7 +22,7 @@ pnpm run dev
 
 untuk menjalan dev pada lokal
 
-untuk hasil yang lebih maksimal bisa next js bisa dibuild dengan menggunakan perintah :
+untuk hasil yang lebih maksimal next js bisa dibuild dengan menggunakan perintah :
 
 ```bash
 pnpm run build
@@ -33,3 +33,8 @@ untuk run hasil build bisa dengan cara:
 ```bash
 pnpm run start -- -p 3001
 ```
+
+## feature 
+
+- menampilkan user sedang aktif atau tidak
+- pagination 
