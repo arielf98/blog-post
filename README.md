@@ -11,13 +11,22 @@
 
 pastikan pnpm sudah terinstall pada di komputer
 
-cara install : 
+cara install :
 [pnpm installation](https://pnpm.io/installation)
 
 setelah pnpm terinstall run :
 
 ```bash
 pnpm run dev
+```
+
+## Env Variable
+
+agar fungsi create, update dan delete bisa berjalan dengan baik. pastikan sudah menambahkan file `env.local` pada direktori src
+didalam file `env.local` isi variable :
+
+```bash
+NEXT_PUBLIC_TOKEN = secret token anda
 ```
 
 untuk menjalan dev pada lokal
@@ -34,7 +43,7 @@ untuk run hasil build bisa dengan cara:
 pnpm run start -- -p 3001
 ```
 
-## feature 
+## feature
 
 - menampilkan user sedang aktif atau tidak
-- pagination 
+- pagination
