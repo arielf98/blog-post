@@ -1,11 +1,8 @@
 import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Avatar, CardActionArea, Stack } from "@mui/material";
-import { deepOrange } from "@mui/material/colors";
-import { LinkProps } from "next/link";
+import { CardActionArea } from "@mui/material";
 
 interface PostCardType {
   cardTitle: string;

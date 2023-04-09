@@ -6,17 +6,14 @@ import {
 import { getUserDetails } from "@component/services/Users";
 import {
   Avatar,
-  Badge,
   Box,
   Card,
-  CardActionArea,
   CardContent,
-  CardMedia,
   Divider,
   Stack,
   Typography,
 } from "@mui/material";
-import { deepOrange, deepPurple } from "@mui/material/colors";
+import { deepPurple } from "@mui/material/colors";
 import { useQuery } from "@tanstack/react-query";
 import { useRouter } from "next/router";
 import React from "react";

@@ -28,14 +28,12 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import Loading from "@component/components/Loading";
 
 export default function Users() {
-  const [page, setPage] = useState(1);
-  const [perPage, setPerPage] = useState(15);
   const [userId, setUserId] = useState("");
   const [open, setOpen] = useState(false);
   const [userName, setUserName] = useState("");
   const { data, isLoading } = useQuery({
     queryKey: ["user-list", userName],
-    queryFn: async () => await getAllUsers(page, perPage, userName),
+    queryFn: async () => await getAllUsers(1, 50, userName),
   });
 
   function handleClose(): void {
