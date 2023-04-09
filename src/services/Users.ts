@@ -12,3 +12,16 @@ export async function getUserDetails(params: UserDetailsType) {
   );
   return res.data;
 }
+
+export async function getAllUsers(page: number, per_page: number) {
+  const res: AxiosResponse<GetUserListResponse[]> = await axios.get(
+    URL_API.users,
+    {
+      params: {
+        page,
+        per_page,
+      },
+    }
+  );
+  return res.data;
+}
