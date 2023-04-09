@@ -8,7 +8,7 @@
 - Tanstack Query
 
 ## link deploy 
-[my blogs](blog-post-2b8k-oiwappvzb-skl98.vercel.app)
+link hasil deploy : [my blogs](https://blog-post-2b8k.vercel.app/)
 
 ## How to run
 
