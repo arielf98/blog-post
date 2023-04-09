@@ -7,6 +7,9 @@
 - Material UI v5
 - Tanstack Query
 
+## link deploy 
+[my blogs](blog-post-2b8k-oiwappvzb-skl98.vercel.app)
+
 ## How to run
 
 pastikan pnpm sudah terinstall pada di komputer
