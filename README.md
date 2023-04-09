@@ -11,7 +11,8 @@
 
 pastikan pnpm sudah terinstall pada di komputer
 
-cara install [pnpm installation]('https://pnpm.io/installation')
+cara install : 
+[pnpm installation](https://pnpm.io/installation)
 
 setelah pnpm terinstall run :
 
