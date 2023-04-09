@@ -22,7 +22,7 @@ pnpm run dev
 
 ## Env Variable
 
-agar fungsi create, update dan delete bisa berjalan dengan baik. pastikan sudah menambahkan file `env.local` pada direktori src
+agar fungsi create, update dan delete bisa berjalan dengan baik. pastikan sudah menambahkan file `env.local` pada direktori root.
 didalam file `env.local` isi variable :
 
 ```bash
