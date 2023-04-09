@@ -5,11 +5,12 @@ import React from "react";
 interface CustomAvatarType {
   name: string;
   status: boolean;
+  email?: string;
 }
 export default function CustomAvatar(props: CustomAvatarType) {
-  const { name, status } = props;
+  const { name, status, email } = props;
   return (
-    <Stack direction={"row"} alignItems={"center"} gap={2}>
+    <Stack direction={"row"} alignItems={"center"} gap={1}>
       <Badge
         variant="dot"
         color="success"
@@ -21,9 +22,16 @@ export default function CustomAvatar(props: CustomAvatarType) {
           {name[0].toUpperCase()}
         </Avatar>
       </Badge>
-      <Typography variant="body2" color={"gray"}>
-        {name}
-      </Typography>
+      <Stack>
+        <Typography variant="body1" color={"gray"}>
+          {name}
+        </Typography>
+        {email && (
+          <Typography variant="body2" color={"gray"}>
+            {email}
+          </Typography>
+        )}
+      </Stack>
     </Stack>
   );
 }
