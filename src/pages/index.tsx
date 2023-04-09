@@ -1,12 +1,10 @@
-import ResponsiveAppBar from "@component/components/Appbar";
-import PostCard, { PostCardButton } from "@component/components/PostCard";
-import { GetPostListResponse } from "@component/services/ApiTypes";
+import Loading from "@component/components/Loading";
+import { PostCardButton } from "@component/components/PostCard";
 import { getBlogList } from "@component/services/BlogPost";
-import { CircularProgress, Pagination, Stack } from "@mui/material";
+import { Pagination, Stack } from "@mui/material";
 import { useQuery } from "@tanstack/react-query";
-import { InferGetServerSidePropsType } from "next";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Home() {
   const [page, setPage] = useState(1);
@@ -32,7 +30,7 @@ export default function Home() {
   return (
     <>
       {isLoading ? (
-        <CircularProgress />
+        <Loading />
       ) : (
         <>
           <title>My Blog Post</title>

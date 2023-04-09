@@ -17,6 +17,6 @@ export const gender: SelectAbleType[] = [
   },
   {
     label: "Female",
-    value: "Female",
+    value: "female",
   },
 ];
