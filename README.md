@@ -28,6 +28,7 @@ didalam file `env.local` isi variable :
 ```bash
 NEXT_PUBLIC_TOKEN = secret token anda
 ```
+isi secret token adalah secret token dari go-rest [go rest](https://gorest.co.in/)
 
 untuk menjalan dev pada lokal
 
